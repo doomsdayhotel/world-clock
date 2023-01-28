@@ -7,24 +7,38 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/aa39173d3d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>World Clock - Bess Yang</title>
   </head>
   <body>
     <div class="container">
       <!-- we could also put index.html or / to make world lock a link to get back to home page-->
-      <h1>World Clock</h1>
+      <h1><i class="fa-regular fa-clock"></i> World Clock</h1>
       <select name="" id="city">
         <option value="">Select a city...</option>
-        <option value="current">My location</option>
-        <option value="Europe/London">London</option>
-        <option value="America/New_York">New York</option>
-        <option value="Pacific/Auckland">Auckland</option>
+        <option value="current">📍 My location</option>
+        <option value="Europe/London">🇬🇧 London</option>
+        <option value="Atlantic/Reykjavik">🇮🇸 Reykjavik</option>
+        <option value="Pacific/Auckland">🇳🇿 Auckland</option>
       </select>
 
       <div id="cities">
         <div class="city" id="los-angeles">
           <div>
-            <h2>Los Angeles</h2>
+            <h2>🇺🇸 Los Angeles</h2>
             <div class="date"></div>
           </div>
           <div class="time"></div>
@@ -32,7 +46,15 @@
 
         <div class="city" id="paris">
           <div>
-            <h2>Paris</h2>
+            <h2>🇫🇷 Paris</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
+        </div>
+
+        <div class="city" id="hk">
+          <div>
+            <h2>🇭🇰 Hong Kong</h2>
             <div class="date"></div>
           </div>
           <div class="time"></div>
@@ -41,15 +63,17 @@
     </div>
     <footer>
       This project was coded by
-      <a href="" target="_blank"> <strong>Bess Yang</strong> </a>
+      <a href="https://www.linkedin.com/in/qixinbessyang/" target="_blank">
+        Bess Yang
+      </a>
       and is open sourced on
       <a
         href="https://github.com/doomsdayhotel/world-clock.git"
         target="_blank"
       >
-        GitHub
-      </a>
-      .
+        GitHub</a
+      >
+      <i class="fa-solid fa-heart"></i>
     </footer>
     <script src="javascript/index.js"></script>
   </body>

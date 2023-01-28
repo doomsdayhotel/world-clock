@@ -25,6 +25,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  //Hong Kong
+  let hkElement = document.querySelector("#hk");
+  if (hkElement) {
+    let hkDateElement = hkElement.querySelector(".date");
+    let hkTimeElement = hkElement.querySelector(".time");
+    let hkTime = moment().tz("Asia/Hong_Kong");
+
+    hkDateElement.innerHTML = hkTime.format("MMMM Do YYYY");
+    hkTimeElement.innerHTML = hkTime.format("h:mm:ss [<small>]A[</small>]");
+  }
 }
 
 function updateCity(event) {
@@ -33,20 +44,27 @@ function updateCity(event) {
     cityTimeZone = moment.tz.guess();
   }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  if (cityName === "London") {
+    cityName = "🇬🇧 London";
+  } else if (cityName === "Auckland") {
+    cityName = "🇳🇿 Auckland";
+  } else if (cityName === "Reykjavik") {
+    cityName = "🇮🇸 Reykjavik";
+  }
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
   // innerHTML += is to append
   citiesElement.innerHTML = `
   <div class="city">
-  <div>
-    <h2>${cityName}</h2>
-    <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
-  </div>
-  <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
+    <div>
+      <h2>${cityName}</h2>
+      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+    </div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
     "A"
   )}</small></div>
-</div>
-<a href="index.html">All cities</a>
+  </div>
+  <div id="all-cities"><a href="index.html">All cities</a></div>
   `;
 }
 
